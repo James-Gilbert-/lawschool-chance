@@ -1,0 +1,4 @@
+import app
+#a few functions then
+if__name__ == '__main__':
+    flaskfile.run(main_fn)
