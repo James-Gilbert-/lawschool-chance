@@ -37,18 +37,19 @@ def index():
 def predict():
     if school_clf:
         try:
+            scores=defaultdict()	
             json_data = request.get_json()
             query = pd.read_json(json_data)
             #create a vector of 0s to populate with filled-in data
             base = pd.DataFrame(0,index=np.arange(1),columns =model_columns)
             base.update(query)
             base[["lsat","gpa"]] = scaler.transform(base[["lsat","gpa"]].as_matrix())
-            #query = applicant.reindex(columns=model_columns, fill_value=0)
-            score = str(school_clf["columbia"].predict_proba(base)[:,1][0])
-            prediction = score
+            #populate the predictions
+            for school_name in t14:
+                scores[school_name +" chance of admission"]= str(school_clf[school_name].predict_proba(base)[:,1][0])
+            prediction = scores
 
-
-            return jsonify({'prediction': prediction})
+            return jsonify(prediction)
 
         except Exception as e:
 
