@@ -4,14 +4,15 @@ import time
 import traceback
 
 from flask import Flask, render_template, request, jsonify
+from flask_cors import CORS
 from sklearn.externals import joblib
 from collections import defaultdict
 import pandas as pd
 import numpy as np
 
 
-app = Flask(__name__)
-
+app = Flask(__name__,template_folder="public")
+CORS(app,resources={"/api/*": {"origins": "*"}})
 
 model_directory = 'models'
 
@@ -31,7 +32,7 @@ model_columns = joblib.load(model_directory+"/"+feature_cols)
 
 @app.route('/')
 def index():
-    return "Hello"
+    return render_template("index.html")
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -46,7 +47,7 @@ def predict():
             base[["lsat","gpa"]] = scaler.transform(base[["lsat","gpa"]].as_matrix())
             #populate the predictions
             for school_name in t14:
-                scores[school_name +" chance of admission"]= str(school_clf[school_name].predict_proba(base)[:,1][0])
+                scores[school_name +"_chance"]= str(school_clf[school_name].predict_proba(base)[:,1][0])
             prediction = scores
 
             return jsonify(prediction)
@@ -58,4 +59,4 @@ def predict():
         return("no model here")
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0",debug=True)
+    app.run(debug=False)
