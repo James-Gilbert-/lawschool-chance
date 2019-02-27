@@ -1,11 +1,12 @@
-# Lawschool Chance
+# Law School Chances
 
-
-Fourteen of the top U.S. law schools are included in the sklearn models. 
+A Python Flask + Sklearn API that provides a score given a candidate profile for each of the top 14 U.S. law schools.
 
 Originally started as a side project after doing research for a friend who was trying to get into law school, then scaled the project by adding additional school models. The data is available at mylsn.info and is collected from LawSchoolNumbers.com.
 
 [Check out a live demo here!](https://schoolpredict.com)
+
+<img src="results.png" height="250" width="350" align="center">
 
 ----
 Python packages for data analysis and model experiments: 
@@ -47,3 +48,4 @@ Applicants could be admitted to multiple schools, so one model per school was tr
 ## Roadmap
 
 A visualization of the decision surface along the LSAT/GPA dimensions for each of the schools is planned. 
+<img src="decision_surface.png" height="250" width="350" align="center">
