@@ -3,7 +3,7 @@ import os
 import time
 import traceback
 
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, Response
 from flask_cors import CORS
 from sklearn.externals import joblib
 from collections import defaultdict
@@ -54,9 +54,9 @@ def predict():
 
         except Exception as e:
 
-            return jsonify({'error': str(e), 'trace': traceback.format_exc()})
+            return Response("{'success':'false'}", status=403, mimetype='application/json')
     else:
-        return("no model here")
+        return("No models available!")
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
