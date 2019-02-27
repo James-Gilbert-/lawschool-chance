@@ -9,22 +9,12 @@ Originally started as a side project after doing research for a friend who was t
 <img src="results.png" height="250" width="350" align="center">
 
 ----
-Python packages for data analysis and model experiments: 
-* Jupyter
-* scikit-learn
-* XGBoost
-* Pandas
+## Tools
+**For data analysis and model experiments**: Jupyter, sklearn, XGBoost, Pandas
 
-For serving the model in development:
-* Flask
-* nginx
-* gunicorn
-* Docker
+**For serving the models in dev**: Flask, nginx, gunicorn, docker
 
-For production demo:
-* AWS Lambda
-* Netlify CI/CD
-* Python (Flask)
+**For production demo**: ReactJS, AWS Lambda, Netlify CI/CD Python (Flask)
 
 
 ## Methodology
