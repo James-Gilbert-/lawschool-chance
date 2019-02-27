@@ -8,13 +8,12 @@ Originally started as a side project after doing research for a friend who was t
 
 <img src="results.png" height="250" width="350" align="center">
 
-----
 ## Tools
-**For data analysis and model experiments**: Jupyter, sklearn, XGBoost, Pandas
+**Data analysis and model experiments**: Jupyter, sklearn, XGBoost, Pandas
 
-**For serving the models in dev**: Flask, nginx, gunicorn, docker
+**Serving the models in dev**: Flask, nginx, gunicorn, docker
 
-**For production demo**: ReactJS, AWS Lambda, Netlify CI/CD Python (Flask)
+**Production demo**: ReactJS, AWS Lambda, Netlify CI/CD Python (Flask)
 
 
 ## Methodology
