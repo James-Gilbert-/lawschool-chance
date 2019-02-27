@@ -32,7 +32,7 @@ model_columns = joblib.load(model_directory+"/"+feature_cols)
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return "Nothing here!"
 
 @app.route('/predict', methods=['POST'])
 def predict():
