@@ -6,7 +6,8 @@ Originally started as a side project after doing research for a friend who was t
 
 [Check out a live demo here!](https://schoolpredict.com)
 
-<img src="results.png" height="250" width="350" align="center">
+<a href="#"><img src="results.png" height="250" width="350" align="center"></a>
+
 
 ## Tools
 **Data analysis and model experiments**: Jupyter, sklearn, XGBoost, Pandas
@@ -37,4 +38,4 @@ Applicants could be admitted to multiple schools, so one model per school was tr
 ## Roadmap
 
 A visualization of the decision surface along the LSAT/GPA dimensions for each of the schools is planned. 
-<img src="decision_surface.png" height="250" width="350" align="center">
+<a href="#"><img src="decision_surface.png" height="250" width="350" align="center"></a>
